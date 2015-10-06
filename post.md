@@ -290,7 +290,7 @@ Let's now add the input field for our keyword.
 <section id="select-image">
   <h2>Step 1. Select an image</h2>
   <p>Enter the keyword to search for images</p>
-	<input id="search-term" type="text">
+  <input id="search-term" type="text">
 </section>
 ```
 
@@ -767,11 +767,13 @@ Then let's put the first input for the left offset into the `#controls`.
 
 ```html
 <div id="controls">
-  Left: <input type="number" value="10" id="left">
+  <label for="left">Left: </label><input type="number" value="10" id="left">
 </div>
 ```
 
 This creates an input box of type "number" (as opposed to "text" that we've been using so far for keyword and text in the previous sections). This means that it behaves just like the "text" input but it also has two small arrows inside it that allow you to increase or decrease the number. Now our page looks like this.
+
+> Notice we've added a label element with a for attribute matching the id of the input. What happens if we remove the for attribute? Sometimes inputs are wrapped in their labels instead of using for, why do you think that is? [Accessible forms](http://htmldog.com/guides/html/advanced/forms/)
 
 ![controls_2](https://github.com/stephenlloyd/Taster/raw/master//day_one/images/controls_2.png)
 
@@ -779,10 +781,10 @@ Adding other number controls is very similar.
 
 ```html
 <div id="controls">
-  Left: <input type="number" value="10" id="left">
-  Top: <input type="number" value="10" id="top">
-  Width: <input type="number" value="400" id="width">
-  Size: <input type="number" value="32" id="size">
+  <label for="left">Left: </label><input type="number" value="10" id="left">
+  <label for="top">Top: </label><input type="number" value="10" id="top">
+  <label for="width">Width: </label><input type="number" value="400" id="width">
+  <label for="size">Size: </label><input type="number" value="32" id="size">
 </div>
 ```
 
@@ -793,7 +795,7 @@ You can see them on the screen straight away.
 Adding drop-down boxes is very similar. Drop-down lists are created using the `<select>` tag with every item in the list defined by the `<option>` tag inside. Let's add the drop-down list for selecting the colour. Add this inside our #controls area.
 
 ```html
-Colour: <select id="colour">
+<label for="colour">Colour: </label><select id="colour">
           <option>red</option>
           <option>green</option>
           <option>white</option>
